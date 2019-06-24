@@ -25,3 +25,4 @@ RUN wget --progress=bar:force:noscroll https://chromedriver.storage.googleapis.c
     cd /usr/local/bin && unzip /chromedriver.zip && \
     rm /chromedriver.zip
 
+ENV PYTHONIOENCODING=utf-8
