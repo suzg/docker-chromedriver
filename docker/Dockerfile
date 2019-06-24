@@ -23,6 +23,7 @@ RUN pip3 install -r /code/requirements.txt
 
 RUN wget --progress=bar:force:noscroll https://chromedriver.storage.googleapis.com/75.0.3770.90/chromedriver_linux64.zip -O /chromedriver.zip && \
     cd /usr/local/bin && unzip /chromedriver.zip && \
+    chmod 755 /usr/local/bin/chromedriver && \
     rm /chromedriver.zip
 
 ENV PYTHONIOENCODING=utf-8
