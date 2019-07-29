@@ -1,4 +1,5 @@
 import time
+import subprocess
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -24,4 +25,13 @@ driver.get('http://www.baidu.com')
 wait(30)
 
 driver.save_screenshot('/test/test.png')
+
+ScreenWidth = 320
+ScreenHeight = 240
+
+cmd = ['convert', '/test/test.png', '-resize', '{}x{}'.format(ScreenWidth,ScreenHeight), '/test/resize-test.png']
+subprocess.call(cmd)
+
+cmd = ['tiv', '/test/resize-test.png', '-256', '-w', str(ScreenWidth), '-h', str(ScreenHeight)]
+subprocess.call(cmd)
 

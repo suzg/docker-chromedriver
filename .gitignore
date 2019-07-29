@@ -1,4 +1,5 @@
 *.swp
 
 /test/test.png
+test/resize-test.png
 
